@@ -1,0 +1,32 @@
+[
+  {
+    "question": "How are you?",
+    "answer": [
+      "Good",
+      "Really Good",
+      "Bad",
+      "Gamno"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "How old is Toha?",
+    "answer": [
+      "12",
+      "14",
+      "15",
+      "23"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "Fresko vishe chem ti dumal?",
+    "answer": [
+      "Da",
+      "Net",
+      "Sho?",
+      "Jak Fresko?"
+    ],
+    "correctAnswerIndex": 2
+  }
+]

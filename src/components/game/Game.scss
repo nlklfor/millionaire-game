@@ -1,0 +1,21 @@
+.option-button{
+  transition: .2s all;
+}
+
+.option-button:hover{
+  //background-color: rgba(255, 165, 0, 0.65);
+  //color: white;
+  //border-color: orange;
+}
+
+.correct{
+  background-color: rgb(77, 187, 62);
+  color: white;
+  border-color: #38802c;
+}
+
+.incorrect{
+  background-color: rgba(225, 47, 47, 0.58);
+  color: white;
+  border-color: #ff0000;
+}
