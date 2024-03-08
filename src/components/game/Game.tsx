@@ -3,10 +3,12 @@ import React, {useState} from 'react';
 import questionsData from '../../../questions.json'
 import './Game.scss'
 
+
 interface Questions {
     question: string,
     answer: string[],
-    correctAnswerIndex: number
+    correctAnswerIndex: number,
+    questionPrice: number
 }
 
 
@@ -56,13 +58,20 @@ const Game: React.FC = () => {
                     (
                         <div>
                             {win ? <h2>You win!</h2> : <h2>Game over!</h2>}
-                            <p>Your final score is: {score}</p>
+                            <p>You earn: {questions[currentQuestionIndex].questionPrice}</p>
                             <button onClick={handleRestart}>Play Again</button>
                         </div>
                     ) : (
                         <div>
                             <h2>Question {currentQuestionIndex + 1}</h2>
                             <p>{questions[currentQuestionIndex].question}</p>
+                            <div>
+                                {questions.map((question, index) => {
+                                    return(
+                                        <p className={`price ${index === currentQuestionIndex && 'current-question'} ${index <= currentQuestionIndex && 'answered'}`}>${question.questionPrice}</p>
+                                    )
+                                })}
+                            </div>
                             <div>
                                 {questions[currentQuestionIndex].answer.map((answer, index) => {
                                     return (

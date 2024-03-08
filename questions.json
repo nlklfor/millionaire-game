@@ -1,3 +1,4 @@
+
 [
   {
     "question": "How are you?",
@@ -7,7 +8,8 @@
       "Bad",
       "Gamno"
     ],
-    "correctAnswerIndex": 3
+    "correctAnswerIndex": 3,
+    "questionPrice": 1000
   },
   {
     "question": "How old is Toha?",
@@ -17,7 +19,8 @@
       "15",
       "23"
     ],
-    "correctAnswerIndex": 3
+    "correctAnswerIndex": 3,
+    "questionPrice": 2000
   },
   {
     "question": "Fresko vishe chem ti dumal?",
@@ -27,6 +30,7 @@
       "Sho?",
       "Jak Fresko?"
     ],
-    "correctAnswerIndex": 2
+    "correctAnswerIndex": 2,
+    "questionPrice": 4000
   }
 ]
