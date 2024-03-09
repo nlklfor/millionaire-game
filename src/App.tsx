@@ -1,18 +1,20 @@
-
-import Game from './components/game/Game.tsx';
 import './App.scss';
+import hand from './assets/hang.png'
 
 function App() {
-  return (
-      <div className="app">
-        <header className="app-header">
-          <h1>Who Wants to Be a Millionaire</h1>
-        </header>
-        <main>
-          <Game />
-        </main>
-      </div>
-  );
+    return (
+        <div className="app">
+            <img src={hand} alt={'hand'} className={'app-img'}/>
+            <header className="app-header">
+                <h1>Who wants to be <br/> a millionaire?</h1>
+            </header>
+            <main className={'app-start'}>
+                <a href={'/game'}>
+                    <button className={'button-start'}>Start</button>
+                </a>
+            </main>
+        </div>
+    );
 }
 
 export default App;

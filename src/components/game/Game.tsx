@@ -58,7 +58,7 @@ const Game: React.FC = () => {
                     (
                         <div>
                             {win ? <h2>You win!</h2> : <h2>Game over!</h2>}
-                            <p>You earn: {questions[currentQuestionIndex].questionPrice}</p>
+                            <p>You earn: ${questions[currentQuestionIndex].questionPrice}</p>
                             <button onClick={handleRestart}>Play Again</button>
                         </div>
                     ) : (
