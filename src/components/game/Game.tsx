@@ -1,5 +1,5 @@
 // Game.tsx
-import React, {useState} from 'react';
+import {useState} from 'react';
 import questionsData from '../../../questions.json'
 import './Game.scss'
 
@@ -8,16 +8,16 @@ interface Questions {
     question: string,
     answer: string[],
     correctAnswerIndex: number,
-    questionPrice: number
+    questionPrice: string
 }
 
 
-const Game: React.FC = () => {
+const Game = () => {
 
     const questions: Questions[] = questionsData;
 
     const [gameOver, setGameOver] = useState(false)
-    const [win , setWin] = useState(false)
+    const [win, setWin] = useState(false)
     const [score, setScore] = useState(0)
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [answerSelected, setAnswerSelected] = useState<boolean>(false);
@@ -38,7 +38,7 @@ const Game: React.FC = () => {
             } else {
                 setGameOver(true);
             }
-        }, 1200);
+        }, 1500);
     };
 
     const handleRestart = () => {
@@ -64,10 +64,10 @@ const Game: React.FC = () => {
                     ) : (
                         <div>
                             <h2>Question {currentQuestionIndex + 1}</h2>
-                            <p>{questions[currentQuestionIndex].question}</p>
-                            <div>
+                            <p className={'game-question'}>{questions[currentQuestionIndex].question}</p>
+                            <div className={'question-price'}>
                                 {questions.map((question, index) => {
-                                    return(
+                                    return (
                                         <p className={`price ${index === currentQuestionIndex && 'current-question'} ${index <= currentQuestionIndex && 'answered'}`}>${question.questionPrice}</p>
                                     )
                                 })}
@@ -75,7 +75,7 @@ const Game: React.FC = () => {
                             <div>
                                 {questions[currentQuestionIndex].answer.map((answer, index) => {
                                     return (
-                                        <button className={`
+                                        <button id={'pointer'} className={`
                                           option-button 
                                           ${answerSelected && userSelectedOption === index && index === questions[currentQuestionIndex].correctAnswerIndex ? 'correct' : ''}
                                           ${answerSelected && userSelectedOption === index && index !== questions[currentQuestionIndex].correctAnswerIndex ? 'incorrect' : ''}

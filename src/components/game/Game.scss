@@ -1,39 +1,12 @@
-/// CONSTANTS ///
+@import "../../style/bundle";
 
-$button-hover: #3891B1;
-$button-inactive: #1E6A8E;
-$button-pressed: #003B63;
-
-$incorrect: #EC6259;
-$wrong: #FF8B37;
-$correct: #47D867;
-
-
-/// MIXINS ///
-
-@mixin button {
-  color: white;
-  background-color: $button-inactive;
-  padding: 20px 10px;
-  border: none;
-  border-radius: 15px;
-  transition: .3s all;
-  :hover {
-    background-color: $button-hover;
-  }
-  :active {
-    background-color: $button-pressed;
-  }
+.game-container{
+  background-color: $black-5;
 }
 
-.option-button {
-  transition: .2s all;
-}
-
-.option-button:hover {
-  //background-color: rgba(255, 165, 0, 0.65);
-  //color: white;
-  //border-color: orange;
+.game-question {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .correct {
@@ -55,3 +28,20 @@ $correct: #47D867;
 .answered {
   opacity: .5;
 }
+
+#pointer {
+  width: 200px;
+  height: 50px;
+  background: #ffce87;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  margin: 20px;
+  transition: .1s all;
+}
+
+
+#pointer:hover {
+  background: #26456e;
+  border-color: #00ffe0;
+}
+
+

@@ -1,0 +1,28 @@
+/// MIXINS ///
+
+@mixin button {
+  color: white;
+  font-family: 'Inter', serif;
+  background-color: $button-inactive;
+  padding: 20px 10px;
+  border: none;
+  border-radius: 15px;
+  transition: .3s all;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 300px;
+
+  &:hover,&:focus {
+    background-color: $button-hover;
+  }
+  &:active {
+    background-color: $button-pressed;
+  }
+}
+
+@mixin title {
+  color: $black-100;
+  font-size: 56px;
+  font-weight: 600;
+}

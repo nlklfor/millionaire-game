@@ -9,7 +9,7 @@
       "Gamno"
     ],
     "correctAnswerIndex": 3,
-    "questionPrice": 1000
+    "questionPrice": "1,000"
   },
   {
     "question": "How old is Toha?",
@@ -20,7 +20,7 @@
       "10"
     ],
     "correctAnswerIndex": 3,
-    "questionPrice": 2000
+    "questionPrice": "2,000"
   },
   {
     "question": "Fresko vishe chem ti dumal?",
@@ -31,6 +31,6 @@
       "Jak Fresko?"
     ],
     "correctAnswerIndex": 2,
-    "questionPrice": 4000
+    "questionPrice": "4,000"
   }
 ]

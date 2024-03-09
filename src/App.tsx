@@ -1,14 +1,14 @@
 import './App.scss';
-import hand from './assets/hang.png'
+import hand from './assets/hand.png'
 
 function App() {
     return (
         <div className="app">
-            <img src={hand} alt={'hand'} className={'app-img'}/>
             <header className="app-header">
-                <h1>Who wants to be <br/> a millionaire?</h1>
+                <img src={hand} alt={'hand'} className={'app-img'}/>
             </header>
             <main className={'app-start'}>
+                <h1 className={'app-title'}>Who wants to be <br/> a millionaire?</h1>
                 <a href={'/game'}>
                     <button className={'button-start'}>Start</button>
                 </a>
