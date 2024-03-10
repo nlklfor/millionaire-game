@@ -1,28 +1,49 @@
 @import "../../style/bundle";
 
 .game-container{
+  display: flex;
+  min-height: 100vh;
   background-color: $black-5;
 }
 
 .game-question {
+  position: absolute;
+  left: 10%;
+  top: 8%;
   font-size: 32px;
   font-weight: 600;
 }
 
+.questions{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  top: 70%;
+  left: 30%;
+}
+
+.question-price{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: $white-100;
+  padding: 10px 20px;
+  text-align: center;
+}
+
 .correct {
-  background-color: rgb(77, 187, 62);
-  color: white;
-  border-color: #38802c;
+  background-color: $green-100;
+  color: $white-100;
 }
 
 .incorrect {
-  background-color: rgba(225, 47, 47, 0.58);
-  color: white;
-  border-color: #ff0000;
+  background-color: $red-100;
+  color: $white-100;
 }
 
 .current-question {
-  color: #535bf2;
+  color: $button-hover;
 }
 
 .answered {
@@ -31,17 +52,50 @@
 
 #pointer {
   width: 200px;
-  height: 50px;
-  background: #ffce87;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  height: 40px;
+  position: relative;
+  background: red;
   margin: 20px;
-  transition: .1s all;
+  outline: 1px solid salmon;
+  cursor: pointer;
+  transition: .4s all;
+}
+#pointer:after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  transform: rotate(180deg);
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ff0000;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+#pointer:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid red;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#pointer:hover:before {
+  border-left: 20px solid $orange-5;
+}
+
+#pointer:hover:after {
+  border-left: 20px solid $orange-5;
+}
+
+#pointer:hover{
+  background: $orange-5;
 }
 
 
-#pointer:hover {
-  background: #26456e;
-  border-color: #00ffe0;
-}
 
 

@@ -1,36 +1,137 @@
 
 [
   {
-    "question": "How are you?",
+    "question": "What is the capital city of France?",
     "answer": [
-      "Good",
-      "Really Good",
-      "Bad",
-      "Gamno"
+      "Rome",
+      "Paris",
+      "Madrid",
+      "Berlin"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": [1,3],
+    "questionPrice": "500"
+  },
+  {
+    "question": "Which planet is known as the \"Red Planet\"?",
+    "answer": [
+      "Venus",
+      "Mars",
+      "Jupiter",
+      "Saturn"
+    ],
+    "correctAnswerIndex": [1],
     "questionPrice": "1,000"
   },
   {
-    "question": "How old is Toha?",
+    "question": "Who painted the famous artwork \"The Starry Night\"?",
     "answer": [
-      "12",
-      "14",
-      "15",
-      "10"
+      "Leonardo da Vinci",
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Claude Monet"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": [1],
     "questionPrice": "2,000"
   },
   {
-    "question": "Fresko vishe chem ti dumal?",
+    "question": "What is the chemical symbol for gold?",
     "answer": [
-      "Da",
-      "Net",
-      "Sho?",
-      "Jak Fresko?"
+      "Go",
+      "Au",
+      "Ag",
+      "Gl"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": [1],
     "questionPrice": "4,000"
+  },
+  {
+    "question": "How many continents are there on Earth?",
+    "answer": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctAnswerIndex": [2],
+    "questionPrice": "8,000"
+  },
+  {
+    "question": "Which animal is known as the \"King of the Jungle\"?",
+    "answer": [
+      "Elephant",
+      "Lion",
+      "Giraffe",
+      "Tiger"
+    ],
+    "correctAnswerIndex": [1],
+    "questionPrice": "16,000"
+  },
+  {
+    "question": "What is the tallest mountain in the world?",
+    "answer": [
+      "Mount Everest",
+      "K2",
+      "Mount Kilimanjaro",
+      "Mount Fuji"
+    ],
+    "correctAnswerIndex": [0],
+    "questionPrice": "32,000"
+  },
+  {
+    "question": "Who wrote the famous play \"Romeo and Juliet\"?",
+    "answer": [
+      "William Shakespeare",
+      "Jane Austen",
+      "Charles Dickens",
+      "Mark Twain"
+    ],
+    "correctAnswerIndex": [0],
+    "questionPrice": "64,000"
+  },
+  {
+    "question": "What is the chemical symbol for water?",
+    "answer": [
+      "H2O",
+      "O2",
+      "CO2",
+      "H2SO4"
+    ],
+    "correctAnswerIndex": [0],
+    "questionPrice": "125,000"
+  },
+  {
+    "question": "Which two colors are typically associated with Christmas?",
+    "answer": [
+      "Red",
+      "Blue",
+      "Green",
+      "Pink",
+      "Yellow"
+    ],
+    "correctAnswerIndex": [0,2],
+    "questionPrice": "250,000"
+  },
+  {
+    "question": "In which year did the Titanic sink?",
+    "answer": [
+      "1912",
+      "1921",
+      "1905",
+      "1933"
+    ],
+    "correctAnswerIndex": [0],
+    "questionPrice": "500,000"
+  },
+  {
+    "question": "Who was the first man to walk on the moon?",
+    "answer": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "Alan Shepard"
+    ],
+    "correctAnswerIndex": [2],
+    "questionPrice": "1,000,000"
   }
 ]

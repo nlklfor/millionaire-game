@@ -7,7 +7,7 @@ import './Game.scss'
 interface Questions {
     question: string,
     answer: string[],
-    correctAnswerIndex: number,
+    correctAnswerIndex: number[],
     questionPrice: string
 }
 
@@ -18,22 +18,22 @@ const Game = () => {
 
     const [gameOver, setGameOver] = useState(false)
     const [win, setWin] = useState(false)
-    const [score, setScore] = useState(0)
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [answerSelected, setAnswerSelected] = useState<boolean>(false);
-    const [userSelectedOption, setUserSelectedOption] = useState<number | null>(null); // Track user selected option
+    const [userSelectedOption, setUserSelectedOption] = useState<number | null>(null);
 
     const handleAnswer = (selectedOption: number) => {
         setAnswerSelected(true);
         setUserSelectedOption(selectedOption);
         setTimeout(() => {
-            if (selectedOption === questions[currentQuestionIndex].correctAnswerIndex) {
-                setScore(score + 1);
+            const correctAnswers = questions[currentQuestionIndex].correctAnswerIndex;
+            if (correctAnswers.includes(selectedOption)) {
                 if (currentQuestionIndex === questions.length - 1) {
-                    setGameOver(true)
+                    setGameOver(true);
                     setWin(true);
                 } else {
                     setCurrentQuestionIndex(currentQuestionIndex + 1);
+                    setAnswerSelected(false);
                 }
             } else {
                 setGameOver(true);
@@ -41,9 +41,9 @@ const Game = () => {
         }, 1500);
     };
 
+
     const handleRestart = () => {
         setGameOver(false)
-        setScore(0)
         setCurrentQuestionIndex(0)
         setAnswerSelected(false)
         setUserSelectedOption(null)
@@ -63,7 +63,6 @@ const Game = () => {
                         </div>
                     ) : (
                         <div>
-                            <h2>Question {currentQuestionIndex + 1}</h2>
                             <p className={'game-question'}>{questions[currentQuestionIndex].question}</p>
                             <div className={'question-price'}>
                                 {questions.map((question, index) => {
@@ -72,20 +71,18 @@ const Game = () => {
                                     )
                                 })}
                             </div>
-                            <div>
+                            <div className={'questions'}>
                                 {questions[currentQuestionIndex].answer.map((answer, index) => {
                                     return (
-                                        <button id={'pointer'} className={`
-                                          option-button 
-                                          ${answerSelected && userSelectedOption === index && index === questions[currentQuestionIndex].correctAnswerIndex ? 'correct' : ''}
-                                          ${answerSelected && userSelectedOption === index && index !== questions[currentQuestionIndex].correctAnswerIndex ? 'incorrect' : ''}
-                                        `} key={index} onClick={() => handleAnswer(index)}>
+                                        <div id={'pointer'}
+                                             className={`option-button ${answerSelected && userSelectedOption === index ? (questions[currentQuestionIndex].correctAnswerIndex.includes(index) ? 'correct' : 'incorrect') : ''}`}
+                                             key={index} onClick={() => handleAnswer(index)}>
                                             {answer}
-                                        </button>
+                                        </div>
+
                                     )
                                 })}
                             </div>
-                            <p>Score: {score}</p>
                         </div>
                     )
             }
