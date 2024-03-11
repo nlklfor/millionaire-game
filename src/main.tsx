@@ -10,7 +10,7 @@ import Game from "./components/game/Game.tsx";
 
 const router = createBrowserRouter([
     {
-        path: "/millionaire-game/",
+        path: "/millionaire-game",
         element: <App/>,
     },
     {
