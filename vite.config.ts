@@ -8,7 +8,7 @@ export default defineConfig({
     port: 8021
   },
   plugins: [react()],
-  base: '/vite-react-router/'
+  base: '/millionaire-game/'
 })
 
 
