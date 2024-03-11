@@ -10,3 +10,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/vite-react-router/'
 })
+
+
+// vite //
