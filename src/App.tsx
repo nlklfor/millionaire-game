@@ -1,6 +1,5 @@
 import './App.scss';
 import hand from './assets/hand.png'
-import {Link} from "react-router-dom";
 
 function App() {
     return (
@@ -10,9 +9,9 @@ function App() {
             </header>
             <main className={'app-start'}>
                 <h1 className={'app-title'}>Who wants to be <br/> a millionaire?</h1>
-                <Link to="/game">
+                <a href={'/millionaire-game/game'}>
                     <button className={'button-start'}>Start</button>
-                </Link>
+                </a>
             </main>
         </div>
     );

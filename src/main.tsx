@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.scss'
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+import App from "./App.tsx";
 import Game from "./components/game/Game.tsx";
 
-ReactDOM.render(
+const router = createBrowserRouter([
+    {
+        path: "/millionaire-game/",
+        element: <App/>,
+    },
+    {
+        path: '/millionaire-game/game',
+        element: <Game/>
+    }
+]);
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/game" element={<Game />} />
-            </Routes>
-        </Router>
+        <RouterProvider router={router}/>
     </React.StrictMode>,
-    document.getElementById('root')
-);
+)
