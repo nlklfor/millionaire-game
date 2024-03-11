@@ -1,6 +1,6 @@
 @import "style/bundle";
 
-.app{
+.app {
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -8,17 +8,46 @@
   background: linear-gradient(to top left, $black-5 50%, $white-100 50%);
 }
 
-.app-start{
+.app-start {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.app-title{
+.app-title {
   @include title;
   margin-bottom: 64px;
 }
 
 .button-start {
   @include button;
+}
+
+/// MEDIA ///
+
+@media (max-width: $iphone-14proMax) {
+  .app-img {
+    width: 200px;
+    height: 120px;
+  }
+  .app-title {
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: $ipad-air) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(to top left, $red-5 50%, $white-100 50%);
+  }
+  .app-img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+  .app-title {
+    font-size: 48px;
+  }
 }

@@ -64,7 +64,7 @@ const Game = () => {
                 gameOver ?
                     (
                         <div className={'game-over'}>
-                            <img alt={'hand'} src={hand}/>
+                            <img alt={'hand'} src={hand} className={'game-over-img'}/>
                             <div className={'stat-info'}>
                                 <p className={'earned'}>
                                     <span
@@ -76,11 +76,15 @@ const Game = () => {
                     ) : (
                         <div>
                             <p className={'game-question'}>{questions[currentQuestionIndex].question}</p>
-                            <div className={'question-price'}>
-                                <div className={'burger-menu'} onClick={handleOpenMenu}>
-                                    <div className={'burger-menu-btn'}></div>
-                                    <div className={'burger-menu-btn'}></div>
-                                    <div className={'burger-menu-btn'}></div>
+                            <div className={'burger-menu'} onClick={handleOpenMenu}>
+                                <div className={'burger-menu-btn'}></div>
+                                <div className={'burger-menu-btn'}></div>
+                                <div className={'burger-menu-btn'}></div>
+                            </div>
+                            <div className={`question-price ${burgerMenu && 'responsive'}`}>
+                                <div className={`burger-menu burger-menu-close`} onClick={handleOpenMenu}>
+                                    <div className={'burger-menu-btn'} id={'close-1'}></div>
+                                    <div className={'burger-menu-btn'} id={'close-2'}></div>
                                 </div>
                                 {questions.map((question, index) => {
                                     return (
