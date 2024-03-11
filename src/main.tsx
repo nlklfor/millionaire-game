@@ -8,8 +8,8 @@ ReactDOM.render(
     <React.StrictMode>
         <Router>
             <Routes>
-                <Route path="/millionaire-game" element={<App />} />
-                <Route path="/millionaire-game/game" element={<Game />} />
+                <Route path="/" element={<App />} />
+                <Route path="/game" element={<Game />} />
             </Routes>
         </Router>
     </React.StrictMode>,

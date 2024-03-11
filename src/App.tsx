@@ -10,7 +10,7 @@ function App() {
             </header>
             <main className={'app-start'}>
                 <h1 className={'app-title'}>Who wants to be <br/> a millionaire?</h1>
-                <Link to="/millionaire-game/game">
+                <Link to="/game">
                     <button className={'button-start'}>Start</button>
                 </Link>
             </main>

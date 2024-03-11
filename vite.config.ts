@@ -8,8 +8,6 @@ export default defineConfig({
     port: 8021
   },
   plugins: [react()],
-  base: '/millionaire-game/#/millionaire-game/',
-
 })
 
 
