@@ -10,11 +10,11 @@ import Game from "./components/game/Game.tsx";
 
 const router = createBrowserRouter([
     {
-        path: "/millionaire-game/",
+        path: "/",
         element: <App/>,
     },
     {
-        path: '/millionaire-game/game',
+        path: '/game',
         element: <Game/>
     }
 ]);
