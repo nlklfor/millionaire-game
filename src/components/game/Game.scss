@@ -1,6 +1,6 @@
 @import "../../style/bundle";
 
-.game-container{
+.game-container {
   display: flex;
   min-height: 100vh;
   background-color: $black-5;
@@ -14,86 +14,289 @@
   font-weight: 600;
 }
 
-.questions{
+.answers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
   position: relative;
-  top: 70%;
-  left: 30%;
+  top: 60%;
+  left: 20%;
 }
 
-.question-price{
+.button-again {
+  @include button;
+}
+
+
+.question-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
   background-color: $white-100;
-  padding: 10px 20px;
+  min-height: 100vh;
+}
+
+.question-price-wrapper {
+  position: relative;
+}
+
+.info {
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-.correct {
-  background-color: $green-100;
-  color: $white-100;
+.info:first-child {
+  margin-top: 60px;
 }
 
-.incorrect {
-  background-color: $red-100;
-  color: $white-100;
+.price {
+  position: absolute;
+  z-index: 10;
 }
 
 .current-question {
   color: $button-hover;
+  stroke: $button-hover;
 }
 
 .answered {
   opacity: .5;
 }
 
-#pointer {
-  width: 200px;
-  height: 40px;
-  position: relative;
-  background: red;
-  margin: 20px;
-  outline: 1px solid salmon;
+.option-wrapper {
   cursor: pointer;
-  transition: .4s all;
 }
-#pointer:after {
-  content: "";
+
+.option-answer {
   position: absolute;
-  left: -20px;
-  transform: rotate(180deg);
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid #ff0000;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
+  margin: 25px 40px;
 }
-#pointer:before {
-  content: "";
+
+.option-button {
+  transition: .3s all;
+}
+
+.option-button:hover {
+  stroke: $button-inactive;
+}
+
+.option-button:active {
+  stroke: $button-pressed;
+}
+
+.correct {
+  fill: $green-5;
+  stroke: $green-100;
+}
+
+.incorrect {
+  fill: $red-5;
+  stroke: $red-100;
+}
+
+.game-over {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  font-size: 24px;
+  color: $black-100;
+  opacity: 0.5;
+  gap: 8px;
+}
+
+.earned {
+  font-size: 32px;
+  color: $black-100;
+  font-weight: 600;
+  margin-bottom: 64px;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu-btn {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 5px;
+}
+
+.burger-menu .question-price {
   position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid red;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  min-height: 100vh;
+  width: 200px; /* Adjust the width as needed */
+  display: none;
 }
 
-#pointer:hover:before {
-  border-left: 20px solid $orange-5;
+.burger-menu.open .question-price {
+  display: block;
 }
 
-#pointer:hover:after {
-  border-left: 20px solid $orange-5;
+
+/// MEDIA ///
+
+@media (min-width: $iphone-se) {
+
 }
 
-#pointer:hover{
-  background: $orange-5;
+@media (min-width: $iphone-xr) {
+  /* Styles for iPhone XR */
+}
+
+@media (min-width: $iphone-12pro) {
+  /* Styles for iPhone 12 Pro */
+}
+
+@media (min-width: $iphone-14proMax) {
+  .question-price{
+    display: none;
+  }
+  .game-question {
+    font-size: 20px;
+  }
+  .answers {
+    top: 40%;
+    left: 10%;
+    display: block;
+  }
+  .option-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: $ipad-mini) {
+  .question-price{
+    display: flex;
+  }
+  .game-question {
+    font-size: 24px;
+  }
+  .answers {
+    top: 40%;
+    left: 20%;
+    display: block;
+  }
+  .option-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: $ipad-air) {
+  .game-question {
+    font-size: 24px;
+  }
+  .answers {
+    top: 40%;
+    left: 30%;
+    display: block;
+  }
+  .option-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: $ipad-pro) {
+  .answers {
+    top: 30%;
+    left: 40%;
+  }
+}
+
+@media (min-width: $netbook) {
+  .game-question {
+    font-size: 32px;
+  }
+  .answers {
+    left: 60%;
+    top: 40%;
+  }
+}
+
+@media (min-width: $screen-hd) {
+  .game-question {
+    font-size: 32px;
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    left: 10%;
+    top: 60%;
+  }
+}
+
+@media (min-width: $screen-fullHd) {
+  .game-question {
+    font-size: 48px;
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    left: 20%;
+    top: 75%;
+  }
+  .option-answer {
+    font-size: 24px;
+  }
+  .price {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: $screen-2k) {
+  .game-question {
+    font-size: 48px;
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    left: 20%;
+    top: 75%;
+  }
+  .option-answer {
+    font-size: 24px;
+  }
+  .price {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: $screen-4k) {
+  .game-question {
+    font-size: 48px;
+  }
+  .answers {
+    display: flex;
+    left: 20%;
+    top: 75%;
+  }
+  .option-answer {
+    font-size: 24px;
+  }
+  .price {
+    font-size: 24px;
+  }
 }
 
 

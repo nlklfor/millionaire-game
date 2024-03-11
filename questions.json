@@ -6,7 +6,8 @@
       "Rome",
       "Paris",
       "Madrid",
-      "Berlin"
+      "Berlin",
+      "Lyon"
     ],
     "correctAnswerIndex": [1,3],
     "questionPrice": "500"
@@ -118,7 +119,8 @@
       "1912",
       "1921",
       "1905",
-      "1933"
+      "1933",
+      "1939"
     ],
     "correctAnswerIndex": [0],
     "questionPrice": "500,000"
